@@ -1,4 +1,4 @@
-import './App.css'
+import './css/App.css'
 import Favourite from './pages/Favourite'
 import MovieDetails from './pages/MovieDetails'
 import Home from './pages/Home'

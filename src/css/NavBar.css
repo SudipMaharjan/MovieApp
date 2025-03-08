@@ -1,0 +1,40 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #121212;
+    border-bottom: 2px solid #333;
+}
+
+.navbar-brand a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgb(209, 136, 0);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand a:hover {
+    color: rgb(226, 147, 0); /* Slightly darker yellow for hover effect */
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    color: rgb(209, 136, 0); /* Hover color for links */
+    transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+

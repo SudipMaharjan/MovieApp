@@ -1,4 +1,5 @@
-import emptyHeartIcon from "../assets/emptyHeartIcon.png"
+import emptyHeartIcon from "../assets/icons/emptyHeartIcon.png"
+import '../css/MovieCard.css'
 
 function MovieCard({movie}){
     function onFavouriteClick(){
@@ -11,7 +12,7 @@ function MovieCard({movie}){
                 <img src={movie.url} alt="" />
                 <div className="movie-overlay">
                     <button className="favourite-button" onClick={onFavouriteClick}>
-                        <img src={emptyHeartIcon}/>
+                        <img src={emptyHeartIcon} />
                     </button>
                 </div>
             </div>

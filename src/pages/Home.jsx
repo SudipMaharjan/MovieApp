@@ -1,6 +1,6 @@
 import MovieCard from "../components/MovieCard";
-import searchIcon from "../assets/searchIcon.png"
 import { useState } from "react";
+import "../css/Home.css";
 
 function Home(){
     const [searchTerm, setSearchTerm] = useState("");
@@ -29,7 +29,6 @@ function Home(){
                     type="submit" 
                     className="search-button">
                         Search
-                        <img src={searchIcon} alt="search Icon"/>
                 </button>
             </form>
 
