@@ -4,11 +4,12 @@ import MovieDetails from './pages/MovieDetails'
 import Home from './pages/Home'
 import { Routes, Route } from'react-router-dom'
 import NavBar from './components/NavBar'
+import { MovieProvider } from './contexts/movieContext' 
 
 function App() {
 
   return (
-    <div className="App">
+    <MovieProvider className="App">
       <NavBar />
       <main className='main-content'>
         <Routes>
@@ -17,7 +18,7 @@ function App() {
           <Route path="/movieDetails" element={<MovieDetails/>} />"
         </Routes>
       </main>
-    </div>
+    </MovieProvider>
   );
 }
 

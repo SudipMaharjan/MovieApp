@@ -1,8 +1,21 @@
 import emptyHeartIcon from "../assets/icons/emptyHeartIcon.png";
+import filledHeartIcon from "../assets/icons/filledHeartIcon.png";
+
 import "../css/MovieCard.css";
+import { useMovieContext } from "../contexts/movieContext";
 
 function MovieCard({ movie }) {
-  function onFavouriteClick() {}
+  const { addToFavourites, removeFromFavourites, isFavourite } = useMovieContext();
+  const favourite = isFavourite(movie.id);
+
+  function onFavouriteClick(e) {
+    e.preventDefault();
+    if (favourite) {
+      removeFromFavourites(movie.id);
+    } else {
+      addToFavourites(movie);
+    }
+  }
 
   return (
     <div className="movie-card">
@@ -12,8 +25,8 @@ function MovieCard({ movie }) {
           alt=""
         />
         <div className="movie-overlay">
-          <button className="favourite-button" onClick={onFavouriteClick}>
-            <img src={emptyHeartIcon} />
+          <button className={`favourite-button ${favourite ? "active" : ""}`} onClick={onFavouriteClick}>
+            <img src={favourite ? filledHeartIcon : emptyHeartIcon} />
           </button>
         </div>
       </div>
