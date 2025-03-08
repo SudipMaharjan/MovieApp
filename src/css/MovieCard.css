@@ -25,7 +25,7 @@
     position: relative;
     width: 100%;
     height: 18rem;
-    overflow: hidden;
+    
     border-radius: 1rem;
 }
 
@@ -39,14 +39,13 @@
 .movie-overlay {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.3); 
     display: flex;
-    justify-content: flex-start; 
+    justify-content: flex-end; 
     align-items: flex-start; 
-    padding: 0.5rem; 
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
@@ -55,28 +54,27 @@
     opacity: 1;
 }
 
-.favourite-button {
+.favourite-button,.watchlist-button {
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.3rem;
 }
 
-.favourite-button img {
+
+
+.favourite-button img, .watchlist-button img{
     width: 1.8rem;
     height: 1.8rem;
     filter: invert(1); 
     transition: transform 0.2s ease-in-out;
 }
 
-
-
-.favourite-button.active img {
+.favourite-button.active img, .watchlist-button.active img {
     filter: none; 
 }
 
-
-.favourite-button:hover img {
+.favourite-button:hover img, .watchlist-button:hover img {
     transform: scale(1.2);
 }
 
@@ -94,4 +92,5 @@
     font-size: 0.875rem;
     color: #aaa;
 }
+
 
