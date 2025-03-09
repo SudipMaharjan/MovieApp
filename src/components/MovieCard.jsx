@@ -4,8 +4,11 @@ import emptyWatchlist from "../assets/icons/emptyWatchlist.png";
 import filledWatchlist from "../assets/icons/filledWatchlist.png";
 import "../css/MovieCard.css";
 import { useMovieContext } from "../contexts/movieContext";
+import { useNavigate } from "react-router-dom"; 
 
 function MovieCard({ movie }) {
+  const navigate = useNavigate(); 
+
   const {
     addToFavourites,
     removeFromFavourites,
@@ -19,22 +22,29 @@ function MovieCard({ movie }) {
   const watchlistElement = isInWatchlist(movie.id);
 
   function onFavouriteClick(e) {
+    e.stopPropagation();
     e.preventDefault();
     favourite ? removeFromFavourites(movie.id) : addToFavourites(movie);
   }
 
   function onWatchlistClick(e) {
+    e.stopPropagation();
     e.preventDefault();
     watchlistElement ? removeFromWatchlist(movie.id) : addToWatchlist(movie);
   }
 
   function onWatchTrailerClick(e) {
+    e.stopPropagation();
     e.preventDefault();
     alert("Coming Soon!");
   }
 
+  function onMovieCardClick(e) {
+    navigate(`/movieDetails/${movie.id}`);
+  }
+
   return (
-    <div className="movie-card">
+    <div className="movie-card" onClick={onMovieCardClick}>
       <div className="movie-poster">
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
