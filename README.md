@@ -27,7 +27,7 @@ Before you begin, ensure you have the following installed:
 
 2. Navigate into the project folder:
    ```bash
-   cd movie-app
+   cd MovieApp
 3. Install the dependencies:
    ```bash
    npm install
