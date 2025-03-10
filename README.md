@@ -1,12 +1,37 @@
-# React + Vite
+# Movie App with Trailer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React application that allows users to view popular movies, their details, and watch their trailers. The app fetches movie data from The Movie Database (TMDb) API and displays it. This is still ongoing repo.
 
-Currently, two official plugins are available:
+## Features
+- **View Popular Movies**: Displays a list of popular movies.
+- **Movie Details**: Shows movie details such as title, overview when clicked.
+- **Watch Trailer**: Allows users to watch the movie's official trailer directly within the app.
+- **Watchlist and Favourites**: Movies can be added to favourite and watchlist
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **React.js**: Front-end framework for building the app.
+- **TMDb API**: Used to fetch movie data (including popular movies, trailers, etc.).
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Before you begin, ensure you have the following installed:
+
+- Node.js (for package management and running the development server)
+- npm (for installing dependencies)
+
+### Setup
+
+1. Clone the repository:
+   ```bash
+   https://github.com/SudipMaharjan/MovieApp.git
+
+2. Navigate into the project folder:
+   ```bash
+   cd MovieApp
+3. Install the dependencies:
+   ```bash
+   npm install
+4. Start the development server:
+   ```bash
+   npm run dev
+
