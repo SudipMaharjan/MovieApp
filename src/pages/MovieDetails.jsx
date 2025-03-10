@@ -10,6 +10,13 @@ function MovieDetails() {
 
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [trailer, setTrailer] = useState(null);
+  const [genres, setGenres] = useState([]);
+
+  const formatRuntime = (minutes) => {
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    return `${hours}h ${mins}m.`;
+  };
 
   async function loadMovieAndTrailer() {
     const movieData = await getMovieWithTrailer(movieId);
@@ -20,6 +27,8 @@ function MovieDetails() {
       const trailerData = movieData?.videos?.results?.find(
         (vid) => vid.name === "Official Trailer"
       );
+
+      setGenres(movieData.genres.map((genre) => genre.name));
 
       if (trailerData) {
         setTrailer(trailerData);
@@ -32,30 +41,40 @@ function MovieDetails() {
   }
 
   useEffect(() => {
-    if (movieId) {
-      loadMovieAndTrailer();
-    }
+    loadMovieAndTrailer();
   }, [movieId]); // Run only when movieId changes
 
-  if (!selectedMovie || !trailer) {
-    return <div className="trailer-failed" >Failed to play the Trailer</div>; // Show a loading state while fetching the movie details and trailer
+  if (!selectedMovie) {
+    return <div className="trailer-failed">Failed to load the movie</div>; // Show a loading state while fetching the movie details and trailer
   }
 
   return (
     <div className="movie-details">
       <h1>{selectedMovie.title}</h1>
-      <p>{selectedMovie.overview}</p>
-      <div className="movie-trailer-container">
-        <Youtube
-          className="trailer-video"
-          videoId={trailer?.key}
-          opts={{
-            width: "100%",
-            height: "600rem",
-            playerVars: { autoplay: 1 },
-          }}
-        />
+      <div className="movie-stats">
+        <p>{selectedMovie.release_date?.split("-")[0]}</p>
+        <p>{formatRuntime(selectedMovie.runtime)} </p>
       </div>
+      <div className="genre-container">
+        {genres.map((genre) => (<div className="genres">{genre}</div>))}
+      </div>
+      <p className="overview">{selectedMovie.overview}</p>
+      <div className="movie-trailer-container">
+        {trailer ? (
+          <Youtube
+            className="trailer-video"
+            videoId={trailer?.key}
+            opts={{
+              width: "100%",
+              height: "600rem",
+              playerVars: { autoplay: 0 },
+            }}
+          />
+        ) : (
+          <div className="trailer-failed">No officiail Trailer available</div>
+        )}
+      </div>
+      {console.log(selectedMovie)}
     </div>
   );
 }

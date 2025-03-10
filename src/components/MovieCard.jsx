@@ -33,12 +33,6 @@ function MovieCard({ movie }) {
     watchlistElement ? removeFromWatchlist(movie.id) : addToWatchlist(movie);
   }
 
-  function onWatchTrailerClick(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    alert("Coming Soon!");
-  }
-
   function onMovieCardClick(e) {
     navigate(`/movieDetails/${movie.id}`);
   }

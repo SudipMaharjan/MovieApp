@@ -1,4 +1,3 @@
-/* Movie container: Uses CSS Grid for perfect row alignment */
 .movie-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); 
@@ -60,8 +59,6 @@
     cursor: pointer;
     padding: 0.3rem;
 }
-
-
 
 .favourite-button img, .watchlist-button img{
     width: 1.8rem;

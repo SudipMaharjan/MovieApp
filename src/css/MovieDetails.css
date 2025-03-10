@@ -13,7 +13,7 @@
 
 .movie-details h1{
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin: 0%;
 }
 
 .movie-trailer-container {
@@ -32,4 +32,43 @@
     width: 100%;
     height: 100%;
     border-radius: 10rem;
+}
+
+.movie-overview{
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: rgb(255, 255, 255);
+    opacity: 0;
+}
+
+.genre-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.genres{
+    padding: 0.5rem;
+    margin: 0.5 rem;
+    font-size: 0.7rem;
+    border: 0.1rem solid rgb(160, 160, 160);
+    border-radius: 1rem;
+}
+
+.overview{
+    padding: 1rem;
+    text-align: start;
+}
+
+.movie-stats{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    margin:0%;
+    padding: 0%;
+    font-size: 0.7rem;
+    color: rgb(204, 204, 204);
 }
